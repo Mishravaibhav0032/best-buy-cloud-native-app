@@ -86,7 +86,7 @@ https://github.com/Mishravaibhav0032/best-buy-cloud-native-app/blob/main/Deploym
 ## 🎥 Demo Video
 
 Watch the full deployment and live demo of the app, including AI-generated content:
-[Demo Video Link](https://youtube.com/demo-video-placeholder)
+https://drive.google.com/file/d/1YLa5-ZpDlv_viy3tFim_8UsW_zWDCB-0/view?usp=drive_link
 
 ---
 
