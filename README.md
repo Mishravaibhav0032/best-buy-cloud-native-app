@@ -12,8 +12,8 @@ The **Best Buy Cloud-Native App** is a microservices-based demo application desi
 > **![Image](https://github.com/user-attachments/assets/8068cf1f-a8c5-4b26-877a-096d50ab4df5)**
 
 ### Components:
-- **Store-Front**: Frontend app for customers
-- **Store-Admin**: Admin dashboard for internal staff
+- **Store-Front**: Frontend app for customers - IP Address to visit that http://130.107.224.231/ 
+- **Store-Admin**: Admin dashboard for internal staff - IP Address to visit that http://130.107.225.174/orders
 - **Order-Service**: Sends orders to Azure Service Bus
 - **Product-Service**: Handles product CRUD operations
 - **Makeline-Service**: Listens to Service Bus for order processing
