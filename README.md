@@ -92,8 +92,8 @@ https://drive.google.com/file/d/1YLa5-ZpDlv_viy3tFim_8UsW_zWDCB-0/view?usp=drive
 
 ## ❌ Issues or Limitations
 
-- MongoDB pods may restart on insufficient resource limits.
-- Initial latency in generating AI images through DALL-E.
+- MongoDB pods may restart on insufficient resource limits and service bus taking time in showing spikes.
+- Initial latency in generating AI images through DALL-E but the quota's limit reached the size.
 - AKS external IP allocation can take a few minutes.
 
 ---
