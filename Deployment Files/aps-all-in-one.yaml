@@ -136,7 +136,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: order-service
-          image: ramymohamed/order-service-l8:latest # Custom image for order service
+          image: vaibhav2792/order-service:latest # Custom image for order service
           ports:
             - containerPort: 3000 # Order service listens on this port
           env: # Environment variables for configuration
@@ -145,9 +145,9 @@ spec:
             - name: ORDER_QUEUE_PORT
               value: "5672"
             - name: ORDER_QUEUE_USERNAME
-              value: "username"
+              value: "Sender"
             - name: ORDER_QUEUE_PASSWORD
-              value: "password"
+              value: "Endpoint=sb://servicebus-bestbuy.servicebus.windows.net/;SharedAccessKeyName=Sender;SharedAccessKey=pG8ZYx0aJC9d2gUt5h4cW2f4cIP/qAn2/+ASbAv381E="
             - name: ORDER_QUEUE_NAME
               value: "orders"
             - name: FASTIFY_ADDRESS
@@ -230,16 +230,16 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: makeline-service
-          image: ramymohamed/makeline-service-l8:latest # Custom Makeline service image
+          image: vaibhav2792/makeline-service:latest # Custom Makeline service image
           ports:
             - containerPort: 3001 # Makeline service listens on this port
           env: # Environment variables for configuration
             - name: ORDER_QUEUE_URI
-              value: "amqp://rabbitmq:5672" # RabbitMQ connection string
+              value: "amqp://ServiceBus-BestBuy.servicebus.windows.net" # RabbitMQ connection string
             - name: ORDER_QUEUE_USERNAME
-              value: "username"
+              value: "Listener"
             - name: ORDER_QUEUE_PASSWORD
-              value: "password"
+              value: "Endpoint=sb://servicebus-bestbuy.servicebus.windows.net/;SharedAccessKeyName=Listener;SharedAccessKey=U6DLWsG9NpOz8T+06UXuZJcNaWv6iPLGm+ASbHBaIFI="
             - name: ORDER_QUEUE_NAME
               value: "orders"
             - name: ORDER_DB_URI
@@ -309,7 +309,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: product-service
-          image: ramymohamed/product-service-l8:latest # Custom product service image
+          image: vaibhav2792/product-service:latest # Custom product service image
           ports:
             - containerPort: 3002 # Product service listens on this port
           env: # Environment variables for configuration
@@ -370,7 +370,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: store-front
-          image: ramymohamed/store-front-l8:latest # Front-end store application
+          image: vaibhav2792/store-front:latest # Front-end store application
           ports:
             - containerPort: 8080 # Front-end app port
               name: store-front
@@ -440,7 +440,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: store-admin
-          image: ramymohamed/store-admin-l8:latest # Admin interface for store
+          image: vaibhav2792/store-admin:latest # Admin interface for store
           ports:
             - containerPort: 8081 # Admin app port
               name: store-admin
@@ -510,7 +510,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: ai-service
-          image: ramymohamed/ai-service-l8:latest
+          image: vaibhav2792/ai-service-l8:latest
           ports:
             - containerPort: 5001
           env:
@@ -519,13 +519,13 @@ spec:
             - name: AZURE_OPENAI_API_VERSION
               value: "2024-07-01-preview"
             - name: AZURE_OPENAI_DEPLOYMENT_NAME # required if using Azure OpenAI
-              value: ""
+              value: "gpt-4"
             - name: AZURE_OPENAI_ENDPOINT # required if using Azure OpenAI
-              value: ""
+              value: "https://mish0-m9lrsceo-swedencentral.openai.azure.com/"
             - name: AZURE_OPENAI_DALLE_ENDPOINT
-              value: ""
+              value: "https://mish0-m9lrsceo-swedencentral.openai.azure.com/"
             - name: AZURE_OPENAI_DALLE_DEPLOYMENT_NAME
-              value: ""
+              value: "dall-e-3"
             - name: OPENAI_API_KEY # always required
               valueFrom:
                 secretKeyRef:
