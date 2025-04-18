@@ -139,6 +139,6 @@ jobs:
 ---
 
 ## 🌟 Author
-**Vaibhav Mishra & Meet Prajapati**  
+**Vaibhav Mishra(041165850) & Meet Prajapati(041178387)**  
 Full-Stack Cloud-Native <br></br>
 Algonquin College, 2025
